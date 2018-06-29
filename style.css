@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-color: #9EA1A8;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 976px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    background-color: #324D5C;
+    width: 100%;
+    position: relative;
+    height: 260px;
+    margin: 0;
+    color: white;
+    box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.75);
+}
+
+.head {
+    width: 100%;
+    position: relative;
+    height: 179px;
+}
+
+.title {
+    position: relative;
+    text-align: center;
+}
+
+.tick_icon {
+    width: 100px;
+    position: absolute;
+}
+
+form {
+    padding: 20px;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+}
+
+#text {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-indent: 10%;
+}
+
+#inp {
+    width: 80%;
+    height: 55px;
+    border-radius: 10px;
+    border-top-right-radius: 26.5px;
+    border-bottom-right-radius: 26.5px;
+    text-indent: 25px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background-color: #78a2b9;
+    color: white;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+    padding-right: 60px;
+}
+
+#btn {
+    cursor: pointer;
+    width: 55px;
+    position: absolute;
+    top: 46%;
+    right: 11%;
+    float: right;
+    ;
+}
+
+#btn:hover {
+    color: #f7d872;
+}
+
+#list {
+    width: 100%;
+    padding: 10px;
+}
+
+#result {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #DADADC;
+    min-height: 50px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #324D5C;
+    line-height: 50px;
+    width: 100%;
+    word-wrap: break-word;
+    margin-right: 0;
+    border-radius: 5px;
+    position: relative;
+    padding-right: 10px;
+    text-indent: 10px;
+}
+
+/* #element:hover {
+    background-color: #f7d872;
+} */
+
+.buttons {
+    width: 150px;
+    height: 50px;
+    top: 0;
+    right: 0;
+    float: right;
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.listbuttons {
+    width: 50px;
+    float: left;
+    height: 50px;
+    border: none;
+    color: #74767B;
+    cursor: pointer;
+}
+
+.edit:hover {
+    color: dodgerblue;
+}
+
+.check:hover {
+    color: green;
+}
+
+.delete:hover {
+    color: maroon;
+}
