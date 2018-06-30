@@ -36,6 +36,7 @@ html {
 .title {
     position: relative;
     text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .tick_icon {
@@ -79,7 +80,7 @@ form {
     cursor: pointer;
     width: 55px;
     position: absolute;
-    top: 46%;
+    top: 22%;
     right: 11%;
     float: right;
     ;
@@ -118,7 +119,7 @@ li {
 } */
 
 h1 {
-    font-family: 'Roboto Condensed', sans-serif;
+    
     font-size: 50px;
     margin-bottom: 10px;
     font-weight: 500;
