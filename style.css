@@ -37,6 +37,7 @@ html {
     position: relative;
     text-align: center;
     font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 4px;
 }
 
 .tick_icon {
@@ -49,6 +50,7 @@ form {
     margin: 0 auto;
     position: relative;
     display: block;
+    top: 15px;
 }
 
 #text {
@@ -83,7 +85,7 @@ form {
     top: 22%;
     right: 11%;
     float: right;
-    ;
+    outline:none;
 }
 
 #list {
