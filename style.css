@@ -45,6 +45,19 @@ html {
     position: absolute;
 }
 
+.stats{
+    margin: 30px auto 10px auto;
+    font-size: 18px;
+}
+
+@media only screen and (min-width:600px)
+{
+    .stats{
+        font-size: 25px;
+    }
+}
+
+
 form {
     padding: 20px;
     margin: 0 auto;
@@ -85,7 +98,7 @@ form {
     top: 22%;
     right: 11%;
     float: right;
-    outline:none;
+    outline: none;
 }
 
 #list {
@@ -99,7 +112,6 @@ form {
 }
 
 li {
-    background-color: #4caf50;
     min-height: 50px;
     padding-left: 10px;
     margin-bottom: 15px;
@@ -113,7 +125,6 @@ li {
     border-radius: 5px;
     position: relative;
     padding: 14px 160px 14px 14px;
-   
 }
 
 /* #element:hover {
@@ -121,14 +132,9 @@ li {
 } */
 
 h1 {
-    
     font-size: 50px;
     margin-bottom: 10px;
     font-weight: 500;
-}
-
-li:hover {
-    background-color: #63da67;
 }
 
 .buttons {
@@ -160,14 +166,36 @@ li:hover {
     background: none;
 }
 
-.edit:hover {
+.active .buttons .edit:hover {
     color: #303F9F;
 }
 
-.check:hover {
+.active .buttons .check:hover {
     color: green;
 }
 
 .delete:hover {
     color: maroon;
+}
+
+.active {
+    background-color: #4caf50;
+}
+
+.active:hover {
+    background-color: #63da67;
+}
+
+.inactive {
+    background-color: #474747;
+    text-decoration: line-through;
+}
+
+.inactive .buttons .edit {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.inactive .buttons .check{
+    color: green;
 }
