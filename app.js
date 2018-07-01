@@ -54,13 +54,28 @@ window.onload = function () {
             i_delete.onclick = del_li;
             del.appendChild(i_delete);
 
+
+            // appending settings button attributes and sub class i
+            var settings = document.createElement("div");
+            settings.setAttribute("class", "settings");
+            var set = document.createElement("button");
+            set.setAttribute("class", "listbuttons gear");
+            var i_gear = document.createElement("i");
+            i_gear.setAttribute("class", "material-icons");
+            i_gear.setAttribute("id", "gear");
+            i_gear.append("settings");
+            i_gear.onclick = slide_li;
+            set.appendChild(i_gear);
+            settings.appendChild(set);
+
             // appending all buttons to buttons class
+            but.classList.add("hide");
             but.appendChild(edit);
             but.appendChild(check);
             but.appendChild(del);
-
             // appending main li to Ul
             tag.appendChild(but);
+            tag.appendChild(settings);
 
 
             // li tree
@@ -116,25 +131,59 @@ window.onload = function () {
     };
 
     function check_li() {
-        
-        if (this.parentNode.parentNode.parentNode.classList.contains("active")){
+
+        if (this.parentNode.parentNode.parentNode.classList.contains("active")) {
             totPendingItems--;
             totCompletedItems++;
+
         }
-            
-        if (this.parentNode.parentNode.parentNode.classList.contains("inactive")){
+
+        if (this.parentNode.parentNode.parentNode.classList.contains("inactive")) {
             totPendingItems++;
             totCompletedItems--;
         }
-           
-            this.parentNode.parentNode.parentNode.classList.toggle("active");
-            this.parentNode.parentNode.parentNode.classList.toggle("inactive");
-        
+
+        this.parentNode.parentNode.parentNode.classList.toggle("active");
+        this.parentNode.parentNode.parentNode.classList.toggle("inactive");
+        console.log(this.parentNode.parentNode.children[0])
         update()
     };
 
     function update() {
         document.querySelector(".pending").innerHTML = totPendingItems;
         document.querySelector(".completed").innerHTML = totCompletedItems;
+    }
+
+    function slide_li() {
+
+        if (this.classList.contains("change-set-black")) {
+            this.classList.remove("change-set-black");
+            this.classList.add("change-set-white");
+            this.parentNode.parentNode.parentNode.children[0].classList.add("hide");
+            this.parentNode.parentNode.parentNode.children[0].classList.remove("show");
+            this.parentNode.parentNode.parentNode.classList.add("reset-li-pad");
+            this.parentNode.parentNode.parentNode.classList.remove("set-li-pad");
+            setTimeout(clearColor, 500);
+            this.parentNode.classList.add("color-w");
+            this.parentNode.classList.remove("color-b");
+        } else {
+            this.classList.remove("change-set-white");
+            this.classList.add("change-set-black");
+            this.parentNode.parentNode.parentNode.children[0].classList.add("show");
+            this.parentNode.parentNode.parentNode.children[0].classList.remove("hide");
+            this.parentNode.parentNode.parentNode.classList.add("set-li-pad");
+            this.parentNode.parentNode.parentNode.classList.remove("reset-li-pad");
+
+            setTimeout(clearColor, 500);
+            this.parentNode.classList.add("color-b");
+            this.parentNode.classList.remove("color-w");
+            // this.parentNode.parentNode.parentNode.children[0].classList.toggle("hide");
+
+
+        }
+
+        function clearColor() {
+            return;
+        }
     }
 };
