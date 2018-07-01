@@ -116,10 +116,20 @@ window.onload = function () {
     };
 
     function check_li() {
-        this.parentNode.parentNode.parentNode.classList.toggle("active");
-        this.parentNode.parentNode.parentNode.classList.toggle("inactive");
-        totCompletedItems++;
-        totPendingItems--;
+        
+        if (this.parentNode.parentNode.parentNode.classList.contains("active")){
+            totPendingItems--;
+            totCompletedItems++;
+        }
+            
+        if (this.parentNode.parentNode.parentNode.classList.contains("inactive")){
+            totPendingItems++;
+            totCompletedItems--;
+        }
+           
+            this.parentNode.parentNode.parentNode.classList.toggle("active");
+            this.parentNode.parentNode.parentNode.classList.toggle("inactive");
+        
         update()
     };
 
