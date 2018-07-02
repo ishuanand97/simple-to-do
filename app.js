@@ -29,7 +29,7 @@ window.onload = function () {
             i_edit.setAttribute("class", "material-icons");
             i_edit.setAttribute("id", "edit");
             i_edit.append("edit");
-            i_edit.onclick = edit_li;
+            edit.onclick = edit_li;
             edit.appendChild(i_edit);
 
 
