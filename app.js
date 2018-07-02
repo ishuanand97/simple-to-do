@@ -109,11 +109,16 @@ window.onload = function () {
     function edit_li() {
 
         var new_string = window.prompt("Edit Task:", this.parentNode.parentNode.parentNode.firstChild.nodeValue);
-        if (new_string != "") {
+        if (new_string) {
             this.parentNode.parentNode.parentNode.firstChild.nodeValue = new_string;
             console.log(this.parentNode.parentNode.parentNode.firstChild.nodeValue);
 
         }
+        else{
+            console.log("lololol");
+        }
+
+        // this.parentNode.parentNode.parentNode.firstChild.setAttribute("contentEditable", true);
     };
 
 
@@ -145,8 +150,10 @@ window.onload = function () {
 
         this.parentNode.parentNode.parentNode.classList.toggle("active");
         this.parentNode.parentNode.parentNode.classList.toggle("inactive");
+
         console.log(this.parentNode.parentNode.children[0])
-        update()
+        this.parentNode.parentNode.children[0].setAttribute("disabled","true");
+        update();
     };
 
     function update() {
