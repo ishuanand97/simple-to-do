@@ -98,8 +98,6 @@ window.onload = function () {
             }
             output.appendChild(tag);
             totPendingItems++;
-            console.log(totCompletedItems);
-            console.log(totPendingItems);
             update();
         }
     };
@@ -108,16 +106,12 @@ window.onload = function () {
 
     function edit_li() {
 
-        var new_string = window.prompt("Edit Task:", this.parentNode.parentNode.parentNode.firstChild.nodeValue);
+        var new_string = window.prompt("Edit Task:", this.parentNode.parentNode.firstChild.nodeValue);
         if (new_string) {
-            this.parentNode.parentNode.parentNode.firstChild.nodeValue = new_string;
-            console.log(this.parentNode.parentNode.parentNode.firstChild.nodeValue);
+            this.parentNode.parentNode.firstChild.nodeValue = new_string;
+            // console.log(this.parentNode.parentNode.children);
 
         }
-        else{
-            console.log("lololol");
-        }
-
         // this.parentNode.parentNode.parentNode.firstChild.setAttribute("contentEditable", true);
     };
 
@@ -140,19 +134,21 @@ window.onload = function () {
         if (this.parentNode.parentNode.parentNode.classList.contains("active")) {
             totPendingItems--;
             totCompletedItems++;
+            this.parentNode.parentNode.children[0].setAttribute("disabled","true");
 
         }
 
         if (this.parentNode.parentNode.parentNode.classList.contains("inactive")) {
             totPendingItems++;
             totCompletedItems--;
+            this.parentNode.parentNode.children[0].removeAttribute("disabled");
         }
 
         this.parentNode.parentNode.parentNode.classList.toggle("active");
         this.parentNode.parentNode.parentNode.classList.toggle("inactive");
 
-        console.log(this.parentNode.parentNode.children[0])
-        this.parentNode.parentNode.children[0].setAttribute("disabled","true");
+        // console.log(this.parentNode.parentNode.children[0])
+        
         update();
     };
 
