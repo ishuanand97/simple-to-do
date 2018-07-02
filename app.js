@@ -123,7 +123,7 @@ window.onload = function () {
             totCompletedItems--;
         this.parentNode.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode.parentNode);
 
-        if (totPendingItems == 0) {
+        if (totPendingItems == 0 && totCompletedItems == 0) {
             var elem = document.getElementById("n").innerHTML = "-----There's nothing in your list yet-----";
         }
         update();
@@ -134,7 +134,7 @@ window.onload = function () {
         if (this.parentNode.parentNode.parentNode.classList.contains("active")) {
             totPendingItems--;
             totCompletedItems++;
-            this.parentNode.parentNode.children[0].setAttribute("disabled","true");
+            this.parentNode.parentNode.children[0].setAttribute("disabled", "true");
 
         }
 
@@ -148,7 +148,7 @@ window.onload = function () {
         this.parentNode.parentNode.parentNode.classList.toggle("inactive");
 
         // console.log(this.parentNode.parentNode.children[0])
-        
+
         update();
     };
 
